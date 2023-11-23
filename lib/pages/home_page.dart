@@ -81,14 +81,17 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         centerTitle: true,
         actions: [
-          IconButton(
-              onPressed: createNewTask,
-              tooltip: "Add New Task",
-              icon: Icon(
-                Icons.note_add,
-                size: 30,
-                color: Colors.black.withOpacity(0.8),
-              ))
+          Padding(
+            padding: const EdgeInsets.only(right: 2),
+            child: IconButton(
+                onPressed: createNewTask,
+                tooltip: "Add New Task",
+                icon: Icon(
+                  Icons.note_add,
+                  size: 31,
+                  color: Colors.black.withOpacity(0.8),
+                )),
+          )
         ],
         leading: Padding(
           padding: const EdgeInsets.only(left: 5),
