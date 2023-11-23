@@ -80,12 +80,22 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.yellow[200],
       appBar: AppBar(
         centerTitle: true,
-        leading: const Padding(
-          padding: EdgeInsets.only(left: 5),
+        actions: [
+          IconButton(
+              onPressed: createNewTask,
+              tooltip: "Add New Task",
+              icon: Icon(
+                Icons.note_add,
+                size: 30,
+                color: Colors.black.withOpacity(0.8),
+              ))
+        ],
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 5),
           child: Icon(
             Icons.task,
             size: 30,
-            color: Colors.black87,
+            color: Colors.black.withOpacity(0.8),
           ),
         ),
         title: RichText(
