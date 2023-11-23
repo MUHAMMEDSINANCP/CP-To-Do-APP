@@ -56,10 +56,12 @@ class _HomePageState extends State<HomePage> {
       context: context,
       builder: (context) {
         return DialogBox(
-          controller: _controller,
-          onSave: saveNewTask,
-          onCancel: () => Navigator.of(context).pop(),
-        );
+            controller: _controller,
+            onSave: saveNewTask,
+            onCancel: () {
+              Navigator.of(context).pop();
+              _controller.clear();
+            });
       },
     );
   }
@@ -77,23 +79,72 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.yellow[200],
       appBar: AppBar(
-        title: const Text('TO DO'),
+        centerTitle: true,
+        leading: const Padding(
+          padding: EdgeInsets.only(left: 5),
+          child: Icon(
+            Icons.task,
+            size: 30,
+            color: Colors.black87,
+          ),
+        ),
+        title: RichText(
+          text: const TextSpan(
+            style: TextStyle(
+              fontSize: 22,
+            ),
+            children: <TextSpan>[
+              TextSpan(
+                text: 'CP ',
+                style: TextStyle(
+                  letterSpacing: 2,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              TextSpan(
+                text: 'TO - DO',
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
+            ],
+          ),
+        ),
         elevation: 0,
       ),
       floatingActionButton: FloatingActionButton(
+        tooltip: "Add New Task",
         onPressed: createNewTask,
         child: const Icon(Icons.add),
       ),
-      body: ListView.builder(
-        itemCount: db.toDoList.length,
-        itemBuilder: (context, index) {
-          return ToDoTile(
-            taskName: db.toDoList[index][0],
-            taskCompleted: db.toDoList[index][1],
-            onChanged: (value) => checkBoxChanged(value, index),
-            deleteFunction: (context) => deleteTask(index),
-          );
-        },
+      body: Stack(
+        children: [
+          if (db.toDoList.isEmpty) // Check if the to-do list is empty
+            const Center(
+              child: Text(
+                'Your To-Do list is Empty!',
+                style: TextStyle(
+                  fontSize: 23,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey,
+                ),
+              ),
+            ),
+          if (db.toDoList.isNotEmpty) // Show the list if it's not empty
+            ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              itemCount: db.toDoList.length,
+              itemBuilder: (context, index) {
+                return ToDoTile(
+                  taskName: db.toDoList[index][0],
+                  taskCompleted: db.toDoList[index][1],
+                  onChanged: (value) => checkBoxChanged(value, index),
+                  deleteFunction: (context) => deleteTask(index),
+                );
+              },
+            ),
+        ],
       ),
     );
   }
