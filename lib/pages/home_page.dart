@@ -88,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                 tooltip: "Add New Task",
                 icon: Icon(
                   Icons.note_add,
-                  size: 31,
+                  size: 30,
                   color: Colors.black.withOpacity(0.8),
                 )),
           )
