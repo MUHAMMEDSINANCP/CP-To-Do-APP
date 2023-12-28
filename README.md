@@ -1,6 +1,6 @@
-## CP To-Do App
+## CP To-Do APP
 
-CP To-Do App is a fully functional task management app built with Flutter. Utilizing Hive for local storage and implementing clean architecture and Flutter state management, it offers a minimalistic design for streamlined task management.
+CP To-Do APP is a fully functional task management app built with Flutter. Utilizing Hive for local storage and implementing clean architecture and Flutter state management, it offers a minimalistic design for streamlined task management.
 
 ### Key Features:
 Task Management: Efficiently organize tasks in a clean interface.
@@ -16,8 +16,8 @@ Minimal Design: Focuses on simplicity and ease of use.
 Task Deletion: Easily delete completed or incomplete tasks based on user preference.
 
 ### Usage:
-CP To-Do App provides a straightforward yet robust task management solution, emphasizing simplicity and effective organization.
+CP To-Do APP provides a straightforward yet robust task management solution, emphasizing simplicity and effective organization.
 
 ### Feedback:
-For any suggestions or feedback, please contact us at cpmuhammedsinan@gmail.com. Your inputs are valuable for enhancing CP To-Do App.
+For any suggestions or feedback, please contact us at cpmuhammedsinan@gmail.com. Your inputs are valuable for enhancing CP To-Do APP.
 
