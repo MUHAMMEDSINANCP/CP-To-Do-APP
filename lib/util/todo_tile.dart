@@ -44,7 +44,7 @@ class ToDoTile extends StatelessWidget {
             children: [
               // checkbox
               Transform.scale(
-                scale: 1.1,
+                scale: 1,
                 child: Checkbox(
                   value: taskCompleted,
                   onChanged: onChanged,
@@ -57,14 +57,13 @@ class ToDoTile extends StatelessWidget {
                 child: Text(
                   taskName,
                   style: TextStyle(
-                    fontSize: 17,
+                    fontSize: 16,
                     decoration: taskCompleted
                         ? TextDecoration.lineThrough
                         : TextDecoration.none,
                   ),
                 ),
               ),
-              const Spacer(),
               const Icon(
                 Icons.swipe_left_outlined,
                 size: 27,

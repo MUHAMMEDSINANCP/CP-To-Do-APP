@@ -138,7 +138,7 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 'Your To-Do list is Empty!',
                 style: TextStyle(
-                  fontSize: 23,
+                  fontSize: 21,
                   fontWeight: FontWeight.bold,
                   color: Colors.grey,
                 ),
