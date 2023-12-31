@@ -136,10 +136,10 @@ class _HomePageState extends State<HomePage> {
           if (db.toDoList.isEmpty) // Check if the to-do list is empty
             const Center(
               child: Text(
-                'Your To-Do list is Empty!',
+                'Empty to-do list.',
                 style: TextStyle(
-                  fontSize: 21,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
                   color: Colors.grey,
                 ),
               ),
